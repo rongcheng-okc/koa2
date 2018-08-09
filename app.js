@@ -46,7 +46,8 @@ app.use(async (ctx, next) => {
     // 由原来的页面跳转到 http://one.okc.com:3000 页面就可以看到下面这个 cookie 了
     ctx.cookies.set('different','8', { 'domain': 'one.okc.com', 'httpOnly': false});
     // 测试 cors 里的 credentials 字段  http://www.ruanyifeng.com
-    ctx.cookies.set('ruanyifeng','teacher', { 'domain': 'www.ruanyifeng.com', 'path': '/', 'httpOnly': false });
+    // 加了 'domain': 'www.ruanyifeng.com', 'path': '/' 这两个设置就不能获取了
+    ctx.cookies.set('ruanyifeng','teacher', { 'httpOnly': false });
     await next();
 });
 
