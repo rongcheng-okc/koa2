@@ -2,7 +2,6 @@ const Koa = require('koa');
 const cors = require('koa2-cors');
 const setCors = require('./middle/setCors');
 const setCoookiesMiddle = require('./middle/setCookies');
-
 const app = new Koa();
 
 setCors(app, cors);
